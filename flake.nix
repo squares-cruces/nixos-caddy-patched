@@ -1,7 +1,7 @@
 {
   description = "A simple Go package";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-  outputs = { lib, self, nixpkgs }:
+  outputs = { self, nixpkgs }:
     let
 
       # to work with older version of flakes
