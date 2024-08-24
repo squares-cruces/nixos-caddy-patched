@@ -33,7 +33,7 @@
             src = ./caddy-src;
             runVend = true;
             vendorHash = "sha256-MfXftwGjkVU8TDDEFfnYR2nCZ9lVKW8YuljTHegJm2w=";
-            meta = with lib; {
+            meta = {
               mainProgram = "caddy";
             };
           };
