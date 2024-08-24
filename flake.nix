@@ -1,7 +1,7 @@
 {
   description = "A simple Go package";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-  outputs = { self, nixpkgs }:
+  outputs = { lib, self, nixpkgs }:
     let
 
       # to work with older version of flakes
@@ -33,6 +33,9 @@
             src = ./caddy-src;
             runVend = true;
             vendorHash = "sha256-MfXftwGjkVU8TDDEFfnYR2nCZ9lVKW8YuljTHegJm2w=";
+            meta = with lib; {
+              mainProgram = "caddy";
+            };
           };
         });
       defaultPackage = forAllSystems (system: self.packages.${system}.caddy);
