@@ -1,10 +1,6 @@
 {
   description = "A simple Go package";
-
-  # Nixpkgs / NixOS version to use. 
-  # As of 2023-10-04 we need unstable for Go # 1.20
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   outputs = { self, nixpkgs }:
     let
 
@@ -25,31 +21,20 @@
 
     in
     {
-
-      # # A Nixpkgs overlay.
-      # overlay = final: prev: {
-      #   go = final.go_1_20;
-      #   buildGoModule = final.buildGo117Module;
-      # };
-
       # Provide some binary packages for selected system types.
       packages = forAllSystems (system:
         let
           pkgs = nixpkgsFor.${system};
         in
         {
-
           caddy = pkgs.buildGoModule {
             pname = "caddy";
             inherit version;
             src = ./caddy-src;
             runVend = true;
-            vendorHash = "sha256-o5s3i+HArqXcmnhmpnnm1qEKmU/UeYii13Qoj5nP39A=";
-            # vendorHash = pkgs.lib.fakeSha256;
-
+            vendorHash = "sha256-MfXftwGjkVU8TDDEFfnYR2nCZ9lVKW8YuljTHegJm2w=";
           };
         });
-
       defaultPackage = forAllSystems (system: self.packages.${system}.caddy);
     };
 }
