@@ -6,7 +6,7 @@ toolchain go1.22.5
 
 require (
 	github.com/caddy-dns/cloudflare v0.0.0-20240703190432-89f16b99c18e
-	github.com/caddy-dns/porkbun v0.1.5
+	github.com/caddy-dns/porkbun v0.2.1
 	github.com/caddyserver/caddy/v2 v2.8.4
 )
 
@@ -71,7 +71,7 @@ require (
 	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
 	github.com/libdns/cloudflare v0.1.2-0.20240604123710-0549667a10ab // indirect
 	github.com/libdns/libdns v0.2.2 // indirect
-	github.com/libdns/porkbun v0.1.3 // indirect
+	github.com/libdns/porkbun v0.2.0 // indirect
 	github.com/manifoldco/promptui v0.9.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
